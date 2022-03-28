@@ -1,0 +1,22 @@
+{
+  "name": "protobuffer-play",
+  "version": "1.0.0",
+  "description": "play with protobuffer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notedit/protobuffer-play.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/notedit/protobuffer-play/issues"
+  },
+  "homepage": "https://github.com/notedit/protobuffer-play#readme",
+  "dependencies": {
+    "ts-proto": "^1.110.1"
+  }
+}

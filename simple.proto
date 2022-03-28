@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+enum EventType {
+    Keyboard = 0;
+    MouseClick = 1;
+    MouseScroll = 2;
+    MouseMove = 3;
+    MouseDoubleClick = 4;
+    Clipboard = 5;
+    DeviceChange = 6;
+    
+    Custom = 100;
+}
+
+message KeyboardData {
+    bool press = 1;  // true: press, false: release
+    int32 code = 2;
+}
+
+message MouseClickData {
+    bool press = 1;  // true: press, false: release
+    int32 code = 2;
+}
+
+message MouseDoubleClickData {
+    int32 code = 1;
+}
+
+message MouseMoveData {
+    float offsetx = 1;
+    float offsety = 2;
+}
+
+message MouseScrollData {
+    float offsetx = 1;
+    float offsety = 2;
+}
+
+message ClipboardData {
+    string text = 1;
+}
+
+
+message DeviceChangeData {
+    int32 index = 1;
+}
+
+message Message {
+    EventType event = 1;
+
+    oneof data {
+        KeyboardData keyboard = 2;
+        MouseClickData mouseclick = 3;
+        MouseDoubleClickData mousedoubleclick = 4;
+        MouseMoveData mousemove = 5;
+        MouseScrollData mousescroll = 6;
+        ClipboardData clipboard = 7;
+        DeviceChangeData devicechange = 8; 
+    }
+}
